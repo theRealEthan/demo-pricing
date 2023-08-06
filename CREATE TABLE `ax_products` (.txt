@@ -1,0 +1,19 @@
+CREATE TABLE `ax_products` (
+  `ProductId` int(11) NOT NULL,
+  `CategoryId` int(11) NOT NULL,
+  `Name` varchar(255) DEFAULT NULL,
+  `Price` decimal(18,3) DEFAULT NULL,
+  `IsProrata` tinyint(1) DEFAULT '0',
+  `DateCreated` datetime DEFAULT NULL,
+  PRIMARY KEY (`ProductId`),
+
+  CONSTRAINT `FK_product_category` FOREIGN KEY (`CategoryId`) REFERENCES `ax_category` (`CategoryId`),
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+
+INSERT INTO `ax_products` (`ProductId`, `CategoryId`, `Name`, `Price`, `IsProrata`, `DateCreated`) VALUES
+(1, 1, 'ADSL Basic Plan', 29.99, 0, '2023-08-06 12:00:00'),
+(2, 2, 'Fibre 100Mbps Plan', 49.99, 0, '2023-08-06 12:01:00'),
+(3, 3, 'Mobile 5GB Data Plan', 14.99, 1, '2023-08-06 12:02:00'),
+(4, 4, 'Web Hosting Basic', 9.99, 0, '2023-08-06 12:03:00'),
+(5, 5, 'VoIP Starter Package', 19.99, 1, '2023-08-06 12:04:00');

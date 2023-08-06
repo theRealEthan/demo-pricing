@@ -1,0 +1,21 @@
+CREATE TABLE `ax_services` (
+  `ServiceId` int(11) NOT NULL AUTO_INCREMENT,
+  `AccountId` int(11) DEFAULT NULL,
+  `ProductId` int(11) NOT NULL,
+  `DateCreated` datetime DEFAULT NULL,
+  `Description` varchar(250) DEFAULT NULL,
+  `DateEnd` datetime DEFAULT NULL
+  PRIMARY KEY (`ServiceId`),
+  KEY `ServiceProductId` (`ProductId`),
+  KEY `ServiceAccountId` (`AccountId`),
+  CONSTRAINT `ServiceAccountId` FOREIGN KEY (`AccountId`) REFERENCES `ax_accountdetails` (`AccountId`),
+  CONSTRAINT `ServiceProductId` FOREIGN KEY (`ProductId`) REFERENCES `ax_products` (`ProductId`),
+) ENGINE=InnoDB AUTO_INCREMENT=5747323 DEFAULT CHARSET=latin1;
+
+
+INSERT INTO `ax_services` (`AccountId`, `ProductId`, `DateCreated`, `Description`, `DateEnd`) VALUES
+(1, 1, '2023-08-06 12:05:00', 'ADSL Basic Plan Subscription', '2024-08-06 12:05:00'),
+(2, 2, '2023-08-06 12:06:00', 'Fibre 100Mbps Plan Subscription', '2024-08-06 12:06:00'),
+(1, 3, '2023-08-06 12:07:00', 'Mobile 5GB Data Plan Subscription', '2024-08-06 12:07:00'),
+(3, 4, '2023-08-06 12:08:00', 'Web Hosting Basic Subscription', '2024-08-06 12:08:00'),
+(2, 5, '2023-08-06 12:09:00', 'VoIP Starter Package Subscription', '2024-08-06 12:09:00');

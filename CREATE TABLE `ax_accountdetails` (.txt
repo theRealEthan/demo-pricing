@@ -1,0 +1,19 @@
+CREATE TABLE `ax_accountdetails` (
+  `AccountId` int(11) NOT NULL AUTO_INCREMENT,
+  `FirstName` varchar(50) DEFAULT NULL,
+  `MiddleNames` varchar(50) DEFAULT NULL,
+  `LastName` varchar(50) DEFAULT NULL,
+  `IdNumber` varchar(20) DEFAULT NULL,
+  `Cell` varchar(50) DEFAULT NULL,
+  `Email` varchar(100) DEFAULT NULL
+  PRIMARY KEY (`AccountId`)
+) ENGINE=InnoDB AUTO_INCREMENT=535226 DEFAULT CHARSET=latin1;
+
+
+
+INSERT INTO `ax_accountdetails` (`FirstName`, `MiddleNames`, `LastName`, `IdNumber`, `Cell`, `Email`) VALUES
+('John', 'David', 'Smith', '123456', '123-456-7890', 'johnsmith@example.com'),
+('Jane', 'Marie', 'Doe', '654321', '098-765-4321', 'janedoe@example.com'),
+('Robert', 'James', 'Johnson', '789012', '456-789-0123', 'robertjohnson@example.com'),
+('Emily', 'Sophia', 'Williams', '210987', '321-654-0987', 'emilywilliams@example.com'),
+('Michael', 'Andrew', 'Brown', '564738', '135-792-4680', 'michaelbrown@example.com');
